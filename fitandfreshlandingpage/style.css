@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* css styling by me... coordinated... */
+:root{
+    --primary-color: lightgreen;
+    --primary-color-dark: green;
+    --text-dark: #000;
+    --white: white;
+    --orange: orangered;
+    --max-width: 1200px;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: flex;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    transition: 0.35;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+nav{
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav_header{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+ 
+.nav_logo a img{
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+.nav_logo .logo-dark{
+    display: none;
+}
+
+
+.nav_menu_btn{
+   font-size: 1.5rem;
+   color: var(--white);
+   cursor: pointer;
+}
+
+.nav_links{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav_links.open{
+    transform: translateY(100%);
+}
+
+.nav_links a{
+    font-weight: 500;
+    color: var(--orange);
+    white-space: nowrap;
+}
+
+ol{
+    list-style-type: none;
+}
+
+header{
+   max-width: var(--max-width);
+   margin: auto;
+   padding: 2rem 1rem; 
+
+   display: grid;
+   gap: 4rem 1rem;
+}
+
+.header_image{
+    overflow: hidden;
+}
+
+.header_image img{
+    margin-inline: auto;
+}
+
+.header_content h1{
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.header_content h3{
+    margin-left: 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 3.5rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.header_content p{
+    margin-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.header_btn{
+  margin-left: 5px;
+  text-align: center;
+}
+
+.header_btn button{
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color:var(--primary-color);
+  border-radius: 5rem;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.header_btn button:hover{
+    background-color: var(--orange);
+}
+
+.header_socials{
+    padding-top: 5rem;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.header_socials a{
+    padding: 8px 10px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+}
+
+.header_socials a:hover{
+    background-color: var(--primary-color-dark);
+}
+
+
+@media(width > 768px){
+    nav{
+       position: static;
+       padding: 2rem 1rem 1rem;
+       max-width: var(--max-width);
+       margin-inline: auto;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+    }
+
+    .nav_header{
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .nav_logo a img{
+        max-width: 170px;
+    }
+
+    .nav_logo .logo-dark{
+        display: flex;
+    }
+
+    .nav_logo .logo-white{
+        display: none;
+    }
+
+    .nav_menu_btn{
+        display: none;
+    }
+
+    .nav_links{
+        position: static;
+        width: fit-content;
+        padding: 0;
+        flex-direction: row;
+        background-color: transparent;
+        transform: none !important;
+    }
+
+    .nav_links a{
+        font-weight: 600;
+        color: var(--text-dark)
+    }
+  
+    .nav_links a:hover{
+        color: var(--primary-color);
+    }
+    
+    header{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .header_content{
+        grid-area: 1/1/2/2;
+    }
+
+    .header_content :is(h1, h3, p, .header_btn){
+          text-align: left;
+    }
+
+    .header_socials{
+        justify-content: flex-start ;
+    }
+
+
+}
+
+@media(width > 500px){
+    #i{
+        background-color: orange;
+    }
+
+    .header-img{
+        padding-top: 93px; 
+    }
+}
+
+
+
+
